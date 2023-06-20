@@ -4,4 +4,4 @@ Baguette-script is a new programming language. It's a _hyperscript brother, the 
 
 The core principles are same so for all aspects not present in this documentation, check out _hyperscript's.
 
-Baguette-script provides a better ecosystem for plugins than _hyperscript.
+Baguette-script aims to offer a better ecosystem for plugins than _hyperscript.

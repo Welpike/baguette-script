@@ -3,4 +3,10 @@
 *the three slashs are silent*
 
 # baguette-script
-A new programming language, a _hyperscript brother
+
+Baguette-script is a new programming language. It's a _hyperscript brother, the first version was a clone of the version 0.9.8 of _hyperscript.
+
+The core principles are same so for all aspects not present in this documentation, check out _hyperscript's.
+
+Baguette-script aims to offer a better ecosystem for plugins than _hyperscript.
+
