@@ -1,0 +1,50 @@
+site_name: baguette-script documentation
+repo_url: https://github.com/Welpike/baguette-script
+repo_name: Welpike/baguette-script
+edit_uri: edit/main/www/docs/
+
+plugins:
+  - search
+
+nav:
+  - index.md
+  - Plugins:
+    - plugins/index.md 
+    - plugins/installation.md
+    - plugins/dev.md
+
+theme:
+  name: material
+  features:
+    - navigation.instant
+    - navigation.sections
+    - navigation.indexes
+    - navigation.expand
+    - navigation.top
+    - navigation.footer
+    - search.suggest
+    - search.share
+    - content.action.view
+    - content.action.edit
+  icon:
+    repo: fontawesome/brands/github
+    view: material/eye
+    edit: material/pencil
+
+extra:
+  social:
+    - icon: fontawesome/brands/discord
+      link: https://htmx.org/discord
+      name: The HTMX discord server
+    - icon: fontawesome/brands/twitter 
+      link: https://twitter.com/htmx_org
+      name: "@htmx_org on Twitter"
+    - icon: fontawesome/brands/github 
+      link: https://github.com/bigskysoftware
+      name: Bigskysoftware on Github
+    - icon: fontawesome/brands/twitter 
+      link: https://twitter.com/Welpike_
+      name: "@Welpike_ on Twitter"
+    - icon: fontawesome/brands/github 
+      link: https://github.com/Welpike
+      name: Welpike on Github

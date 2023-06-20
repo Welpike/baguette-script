@@ -4632,16 +4632,11 @@
             if (tokens.matchToken("worker")) {
                 parser.raiseParseError(
                     tokens,
-                    "Compatibility between _hyperscript and baguette-script" +
-                        "is not implemented yet."
+                    "In order to use the 'worker' feature, include " +
+                        "the _hyperscript/baguetteScript worker plugin. See " +
+                        "https://hyperscript.org/features/worker/ for " +
+                        "more info."
                 );
-                // parser.raiseParseError(
-                //     tokens,
-                //     "In order to use the 'worker' feature, include " +
-                //         "the baguetteScript worker plugin. See " +
-                //         "https://hyperscript.org/features/worker/ for " +
-                //         "more info."
-                // );
                 return undefined
             }
         });
@@ -5677,49 +5672,49 @@
             }
         });
 
-      parser.addCommand("continue", function (parser, runtime, tokens) {
+        parser.addCommand("continue", function (parser, runtime, tokens) {
 
-        if (!tokens.matchToken("continue")) return;
+            if (!tokens.matchToken("continue")) return;
 
-        var command = {
-          op: function (context) {
+            var command = {
+            op: function (context) {
 
-            // scan for the closest repeat statement
-            for (var parent = this.parent ; true ; parent = parent.parent) {
+                // scan for the closest repeat statement
+                for (var parent = this.parent ; true ; parent = parent.parent) {
 
-              if (parent == undefined) {
-                parser.raiseParseError(tokens, "Command `continue` cannot be used outside of a `repeat` loop.")
-              }
-              if (parent.loop != undefined) {
-                return parent.resolveNext(context)
-              }
+                if (parent == undefined) {
+                    parser.raiseParseError(tokens, "Command `continue` cannot be used outside of a `repeat` loop.")
+                }
+                if (parent.loop != undefined) {
+                    return parent.resolveNext(context)
+                }
+                }
             }
-          }
-        };
-        return command;
-      });
+            };
+            return command;
+        });
 
-      parser.addCommand("break", function (parser, runtime, tokens) {
+        parser.addCommand("break", function (parser, runtime, tokens) {
 
-        if (!tokens.matchToken("break")) return;
+            if (!tokens.matchToken("break")) return;
 
-        var command = {
-          op: function (context) {
+            var command = {
+            op: function (context) {
 
-            // scan for the closest repeat statement
-            for (var parent = this.parent ; true ; parent = parent.parent) {
+                // scan for the closest repeat statement
+                for (var parent = this.parent ; true ; parent = parent.parent) {
 
-              if (parent == undefined) {
-                parser.raiseParseError(tokens, "Command `continue` cannot be used outside of a `repeat` loop.")
-              }
-              if (parent.loop != undefined) {
-                  return runtime.findNext(parent.parent, context);
-              }
+                if (parent == undefined) {
+                    parser.raiseParseError(tokens, "Command `continue` cannot be used outside of a `repeat` loop.")
+                }
+                if (parent.loop != undefined) {
+                    return runtime.findNext(parent.parent, context);
+                }
+                }
             }
-          }
-        };
-        return command;
-      });
+            };
+            return command;
+        });
 
         parser.addGrammarElement("stringLike", function (parser, runtime, tokens) {
             return parser.parseAnyOf(["string", "nakedString"], tokens);
