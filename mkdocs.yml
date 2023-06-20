@@ -11,7 +11,10 @@ nav:
   - Plugins:
     - plugins/index.md 
     - plugins/installation.md
+    - plugins/languages_plugins.md
+    - plugins/build_in_plugins.md
     - plugins/dev.md
+  - license.md
 
 theme:
   name: material
